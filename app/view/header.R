@@ -9,7 +9,7 @@ box::use(
 ui <- function(id) {
   ns <- NS(id)
   #=========HEADER================
- 
+
   # A single header menu item
   nav_item <- function(inputId, label) {
     actionButton(inputId, label, class = "btn-nav_menu")
@@ -84,21 +84,21 @@ ui <- function(id) {
 
     # Application title to be displayed
     title = div("Trending Docker Images on DockerHub",
-      class = "app_header_title mobile-toggled"
+                class = "app_header_title mobile-toggled"
     ),
 
     # The call to action button
     cta = actionButton("cta_talk", "Let's Talk",
-      class = "btn-primary btn-cta mobile-toggled",
-      onclick ="window.open('https://www.linkedin.com/in/indraneelchakraborty/', '_blank')"
+                       class = "btn-primary btn-cta mobile-toggled",
+                       onclick ="window.open('https://www.linkedin.com/in/indraneelchakraborty/', '_blank')"
     ),
 
     # The info icon
     info = actionButton("cta_info",
-      label = "",
-      icon = icon("circle-info"),
-      class = "cta-icon",
-      onclick ="window.open('https://giphy.com/clips/minions-rise-of-gru-ottos-big-story-VIEsQ2b0IMw1dn11zq', '_blank')" #nolint
+                        label = "",
+                        icon = icon("circle-info"),
+                        class = "cta-icon",
+                        onclick ="window.open('https://giphy.com/clips/minions-rise-of-gru-ottos-big-story-VIEsQ2b0IMw1dn11zq', '_blank')" #nolint
     ),
 
     # The navigation
@@ -111,10 +111,10 @@ ui <- function(id) {
         l = "row"
       )
 
-    #   nav_item("menu_item_one", "Menu Item"),
-    #   nav_item("menu_item_two", "Menu Item"),
-    #   nav_item("menu_item_three", "Menu Item"),
-    #   nav_item("menu_item_four", "Menu Item")
+      #   nav_item("menu_item_one", "Menu Item"),
+      #   nav_item("menu_item_two", "Menu Item"),
+      #   nav_item("menu_item_three", "Menu Item"),
+      #   nav_item("menu_item_four", "Menu Item")
     ),
     # Header Content END
 

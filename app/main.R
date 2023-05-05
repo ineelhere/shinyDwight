@@ -11,7 +11,7 @@ ui <- function(id) {
   ns <- NS(id)
   #=========HEADER================
   header$ui(ns("app_header"))
-  
+
 }
 
 #' @export

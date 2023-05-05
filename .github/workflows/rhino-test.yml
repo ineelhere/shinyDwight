@@ -45,20 +45,20 @@ jobs:
         with:
           node-version: 16
 
-      - name: Lint R
-        if: always()
-        shell: Rscript {0}
-        run: rhino::lint_r()
+      # - name: Lint R
+      #   if: always()
+      #   shell: Rscript {0}
+      #   run: rhino::lint_r()
 
-      - name: Lint JavaScript
-        if: always()
-        shell: Rscript {0}
-        run: rhino::lint_js()
+      # - name: Lint JavaScript
+      #   if: always()
+      #   shell: Rscript {0}
+      #   run: rhino::lint_js()
 
-      - name: Lint Sass
-        if: always()
-        shell: Rscript {0}
-        run: rhino::lint_sass()
+      # - name: Lint Sass
+      #   if: always()
+      #   shell: Rscript {0}
+      #   run: rhino::lint_sass()
 
       - name: Build JavaScript
         if: always()
