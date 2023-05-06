@@ -67,7 +67,7 @@ code, kbd, pre, samp {
     background: transparent;
     border: none;
 
-    color: #697077;
+    color: #0099f9;
   }
   .btn-nav_menu:hover, .btn-nav_menu:active {
     color: #0099F9 !important;
@@ -104,7 +104,7 @@ code, kbd, pre, samp {
       font-size: 18px;
       line-height: 24px;
 
-      color: #040A3C;
+      color: #626ed3;
     }
 
     .header_control {
@@ -140,7 +140,39 @@ code, kbd, pre, samp {
     justify-content: center;
     margin: 16px auto 0;
     height: 100px;
-    width: 300px;
+    width: 350px;
     padding: auto;
   }
 
+  .value_box {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 0;
+    font-family: 'Maven Pro', sans-serif;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .value_box:hover {
+    background-color: rgba(0, 191, 255, 0.8);
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
+    transform: translateY(-5px);
+  }
+  
+  .value_box:hover h2 {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+  }
+  
+  .value_box:hover p {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+  }
+ 
+  .sidebar_icon{
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 0;
+  }

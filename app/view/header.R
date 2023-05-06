@@ -83,7 +83,7 @@ ui <- function(id) {
     separator = div(class = "app_header_vertical_separator mobile-toggled"),
 
     # Application title to be displayed
-    title = div("Trending Docker Images on DockerHub",
+    title = div("Dwight Schrute vs The Computer",
                 class = "app_header_title mobile-toggled"
     ),
 
@@ -98,7 +98,7 @@ ui <- function(id) {
                         label = "",
                         icon = icon("circle-info"),
                         class = "cta-icon",
-                        onclick ="window.open('https://giphy.com/clips/minions-rise-of-gru-ottos-big-story-VIEsQ2b0IMw1dn11zq', '_blank')" #nolint
+                        onclick ="window.open('https://www.youtube.com/watch?v=iZ6bamP8wZk', '_blank')" #nolint
     ),
 
     # The navigation
