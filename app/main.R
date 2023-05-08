@@ -8,7 +8,7 @@ box::use(
   app/view/counts,
   app/view/twitter,
   app/view/sidebar,
-
+  app/view/plot,
 )
 
 #' @export
@@ -23,11 +23,12 @@ ui <- function(id) {
            sidebar$ui(ns("sidebar"))),
     column(width = 8,
            gridPanel(
-             counts$ui(ns("docker_counts"))
+             counts$ui(ns("docker_counts")),
+             plot$ui(ns("barchart"))
            )
     ),
     column(width = 3,
-          #  twitter$ui(ns("twitter"))
+           twitter$ui(ns("twitter"))
     )
   )
 }
@@ -38,6 +39,7 @@ server <- function(id) {
     header$server("app_header")
     sidebar$server("sidebar")
     counts$server("docker_counts")
+    plot$server("barchart")
     twitter$server("twitter")
   })
 }

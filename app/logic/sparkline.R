@@ -7,8 +7,6 @@ custom_sparkline <- function(column_name){
     # create data frame
     df <- fread("app/data/data.csv",
                 select = c("Time", column_name))
-    
-    df <- df[order(df$Time), ]
 
     # create sparkline
     sparkline <- plot_ly(df, colors = "white") %>% 
