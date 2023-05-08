@@ -1,13 +1,37 @@
 box::use(
-  shiny[bootstrapPage, moduleServer, NS, renderText, tags, textOutput],
+  shiny[moduleServer, NS, br,span, ...],
+  imola[...],
+)
+
+box::use(
+  app/view/header,
+  app/view/counts,
+  app/view/twitter,
+  app/view/dwightbio,
+  app/view/sidebar,
+  app/view/plot,
 )
 
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-  bootstrapPage(
-    tags$h3(
-      textOutput(ns("message"))
+  #=========HEADER================
+
+  fluidRow(
+    header$ui(ns("app_header")),
+    br(),
+    column(width = 1,
+           sidebar$ui(ns("sidebar"))),
+    column(width = 8,
+           gridPanel(
+             counts$ui(ns("salecounts")),
+             plot$ui(ns("plotchart"))
+           )
+    ),
+    column(width = 3,
+           dwightbio$ui(ns("dwightbio")),
+           twitter$ui(ns("twitter")),
+
     )
   )
 }
@@ -15,6 +39,11 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    output$message <- renderText("Hello!")
+    header$server("app_header")
+    sidebar$server("sidebar")
+    counts$server("salecounts")
+    plot$server("plotchart")
+    twitter$server("twitter")
+    dwightbio$server("dwightbio")
   })
 }
