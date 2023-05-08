@@ -153,23 +153,23 @@ code, kbd, pre, samp {
     box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
     transition: all 0.3s ease-in-out;
   }
-  
+
   .value_box:hover {
     background-color: rgba(0, 191, 255, 0.8);
     box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
     transform: translateY(-5px);
   }
-  
+
   .value_box:hover h2 {
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
   }
-  
+
   .value_box:hover p {
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
   }
- 
+
   .sidebar_icon{
     display: flex;
     flex-direction: column;
@@ -180,11 +180,11 @@ code, kbd, pre, samp {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
+
     .nav {
       margin: 10px 0;
       transition: all 0.2s ease-in-out;
-  
+
       img {
         width: 85px;
         height: 85px;
@@ -192,7 +192,7 @@ code, kbd, pre, samp {
         border-radius: 50%;
         box-shadow: 0 0 10px rgba(163, 230, 7, 0.2);
         transition: all 0.2s ease-in-out;
-  
+
         &:hover {
           transform: scale(1.1);
           box-shadow: 0 0 20px rgba(8, 39, 105, 0.4);
@@ -200,20 +200,19 @@ code, kbd, pre, samp {
       }
     }
   }
-  
+
   .dwight-bio {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin: 0 10%;
-    
+
     p, h3 {
       transition: text-shadow 0.5s ease-in-out;
     }
-    
+
     &:hover p, &:hover h3 {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
     }
   }
-  

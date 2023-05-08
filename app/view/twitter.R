@@ -1,6 +1,6 @@
 box::use(
-    shiny[...],
-    utils[...],
+  shiny[...],
+  utils[...],
 )
 
 tweet <- "https://twitter.com/theofficetv/status/1641470486357102592?s=20"
@@ -20,53 +20,53 @@ $(window).on("message", function(e) {
 #' @export
 ui <- function(id) {
   ns <- NS(id)
-fluidPage(
-  fluidRow(
-    tags$head(
-      tags$script(HTML(js)),
-      tags$style(HTML(
-        "
+  fluidPage(
+    fluidRow(
+      tags$head(
+        tags$script(HTML(js)),
+        tags$style(HTML(
+          "
         .content {
           margin: auto;
           padding: 0px;
           width: auto;
         }"))
-    ),
+      ),
 
-    uiOutput(ns("frame"))
+      uiOutput(ns("frame"))
+    )
   )
-)
 }
 
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-  output[["frame"]] <- renderUI({
-    tagList(
-      tags$div(
-        class = "content",
+    output[["frame"]] <- renderUI({
+      tagList(
         tags$div(
+          class = "content",
+          tags$div(
             tags$div(class = "dwight-bio",
-              tags$iframe(
-                id = "tweet",
-                class = "embed-responsive-item",
-                border = 0,
-                frameborder = 0,
-                allowfullscreen = TRUE,
-                src = src
-              )
+                     tags$iframe(
+                       id = "tweet",
+                       class = "embed-responsive-item",
+                       border = 0,
+                       frameborder = 0,
+                       allowfullscreen = TRUE,
+                       src = src
+                     )
             )
-            )
-      ),
-      singleton(tags$script(HTML(
-        "$(document).ready(function(){
+          )
+        ),
+        singleton(tags$script(HTML(
+          "$(document).ready(function(){
           $('iframe#tweet').on('load', function() {
             this.contentWindow.postMessage(
               { element: {id:this.id}, query: 'height' },
               'https://twitframe.com');
           });
         });")))
-    )
+      )
+    })
   })
-})
 }

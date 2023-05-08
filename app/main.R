@@ -29,9 +29,9 @@ ui <- function(id) {
            )
     ),
     column(width = 3,
-          dwightbio$ui(ns("dwightbio")),
-          twitter$ui(ns("twitter")),
-          
+           dwightbio$ui(ns("dwightbio")),
+           twitter$ui(ns("twitter")),
+
     )
   )
 }

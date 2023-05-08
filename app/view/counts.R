@@ -17,7 +17,7 @@ ui <- function(id) {
   page_fluid(
     layout_column_wrap(
       width = "250px",
-      
+
       value_box(
         class = "value_box",
         title = p("🚀 Dwight's Sales"),
@@ -39,18 +39,16 @@ ui <- function(id) {
         full_screen = FALSE
       ),
       value_box(
-      class = "value_box",
-      value = "DWIGHT ROCKS 🤘", 
-      title = p("Computer beaten by 52 reams of paper"),
-      showcase = bs_icon("emoji-sunglasses-fill"),
-      showcase_layout = showcase_top_right(),
-      theme_color = "secondary",
-    )
+        class = "value_box",
+        value = "DWIGHT ROCKS 🤘",
+        title = p("Computer beaten by 52 reams of paper"),
+        showcase = bs_icon("emoji-sunglasses-fill"),
+        showcase_layout = showcase_top_right(),
+        theme_color = "secondary",
+      )
     )
 
   )
-
-  
 
 }
 

@@ -1,13 +1,13 @@
 box::use(
-    shiny[...],
-    bslib[...],
-    data.table[fread],
-    echarts4r[...]
+  shiny[...],
+  bslib[...],
+  data.table[fread],
+  echarts4r[...]
 )
 
 box::use(
-    app/logic/barplot[barplot],
-    app/logic/pieplot[pieplot],
+  app/logic/barplot[barplot],
+  app/logic/pieplot[pieplot],
 )
 
 #' @export
@@ -38,7 +38,7 @@ server <- function(id) {
     output$piechart <- renderEcharts4r({
       pieplot(df)
     })
-    
+
   })
 }
 
