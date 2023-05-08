@@ -7,6 +7,7 @@ box::use(
   app/view/header,
   app/view/counts,
   app/view/twitter,
+  app/view/dwightbio,
   app/view/sidebar,
   app/view/plot,
 )
@@ -24,12 +25,13 @@ ui <- function(id) {
     column(width = 8,
            gridPanel(
              counts$ui(ns("salecounts")),
-             br(),
              plot$ui(ns("plotchart"))
            )
     ),
     column(width = 3,
-           twitter$ui(ns("twitter"))
+          dwightbio$ui(ns("dwightbio")),
+          twitter$ui(ns("twitter")),
+          
     )
   )
 }
@@ -42,5 +44,6 @@ server <- function(id) {
     counts$server("salecounts")
     plot$server("plotchart")
     twitter$server("twitter")
+    dwightbio$server("dwightbio")
   })
 }

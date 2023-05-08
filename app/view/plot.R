@@ -1,7 +1,8 @@
 box::use(
     shiny[...],
     bslib[...],
-    plotly[...], 
+    data.table[fread],
+    echarts4r[...]
 )
 
 box::use(
@@ -13,14 +14,13 @@ box::use(
 ui <- function(id) {
   ns <- NS(id)
   fluidRow(
-    br(),
     column(
       width = 8,
-      plotlyOutput(ns("barchart"))
+      echarts4rOutput(ns("barchart"))
     ),
     column(
       width = 4,
-      plotlyOutput(ns("piechart"))
+      echarts4rOutput(ns("piechart"))
     )
   )
 
@@ -29,13 +29,14 @@ ui <- function(id) {
 #' @export
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
-    
-    output$barchart <- renderPlotly({
-      barplot()
+    df <- fread("app/data/data.csv")
+
+    output$barchart <- renderEcharts4r({
+      barplot(df)
     })
 
-    output$piechart <- renderPlotly({
-      pieplot()
+    output$piechart <- renderEcharts4r({
+      pieplot(df)
     })
     
   })

@@ -1,30 +1,25 @@
 box::use(
-    plotly[...],
-    data.table[...],
+    dplyr[...],
+    echarts4r[...],
 )
 
-pieplot <- function(){
-    df <- fread("app/data/data.csv")
-    # Calculate the percentage of Dwight's sales for each time
-    df <- df %>%
+pieplot <- function(df) {
+  
+  # Calculate the percentage of Dwight's sales for each time
+  df <- df %>%
     mutate(Dwight_pct = Dwight / sum(Dwight) * 100)
-
-    # Create the donut chart
-    p <- plot_ly(
-    data = df,
-    labels = ~Time,
-    values = ~Dwight_pct,
-    type = 'pie',
-    hole = 0.6,
-    textposition = 'inside',
-    textinfo = 'percent+label'
-    # texttemplate = '%{label}: %{percent:.0f}%<br>(%{value} Hrs)'
-    )
-    # Add layout
-    p <- p %>% layout(
-    title = "Dwight's sales percentage by time",
-    showlegend = FALSE
-    )
-    # Return the plot
-    return(p)
+  
+  # Create the donut chart
+  p <- e_charts(df, Time) %>%
+    e_pie(Dwight_pct, name = "Dwight's sales percentage by time") %>%
+    
+    # Customize labels and tooltips
+    e_tooltip(trigger = "item", formatter = "{a} <br/>{b}: {c}%") %>%
+    e_legend(bottom = "bottom") %>%
+    
+    # Add title
+    e_title("Dwight's sales percentage by time")
+  
+  # Return the plot
+  return(p)
 }

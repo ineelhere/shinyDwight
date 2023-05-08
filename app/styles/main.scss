@@ -175,3 +175,45 @@ code, kbd, pre, samp {
     flex-direction: column;
     margin: 30px auto 0;
   }
+  .nav-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    .nav {
+      margin: 10px 0;
+      transition: all 0.2s ease-in-out;
+  
+      img {
+        width: 85px;
+        height: 85px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(163, 230, 7, 0.2);
+        transition: all 0.2s ease-in-out;
+  
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 20px rgba(8, 39, 105, 0.4);
+        }
+      }
+    }
+  }
+  
+  .dwight-bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 10%;
+    
+    p, h3 {
+      transition: text-shadow 0.5s ease-in-out;
+    }
+    
+    &:hover p, &:hover h3 {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+    }
+  }
+  

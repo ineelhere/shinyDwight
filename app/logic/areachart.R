@@ -1,37 +1,24 @@
 box::use(
-    plotly[...],
-    data.table[...],
+    dplyr[...],
+    echarts4r[...],
 )
 
-filled_area_chart <- function(){
-    df <- fread("app/data/data.csv")
-    # Create the area chart
-    p <- plot_ly(
-  data = df,
-  x = ~Time,
-  height = 400, # set the height to 400 pixels
-  width = 600   # set the width to 600 pixels
-) %>%
-  add_trace(
-    y = ~Dwight,
-    name = "Dwight",
-    type = 'scatter',
-    mode = 'lines',
-    fill = 'tozeroy'
-  ) %>%
-  add_trace(
-    y = ~Computer,
-    name = "Computer",
-    type = 'scatter',
-    mode = 'lines',
-    fill = 'tozeroy'
-  ) %>% 
-  layout(
-    title = "Dwight vs Computer",
-    xaxis = list(title = "Time (Hrs)"),
-    yaxis = list(title = "Count (Reams of paper)")
-  )
-
-    # Return the plot
-    return(p)
+areaplot <- function(df) {
+  
+  # Create the area chart
+  p <- e_charts(df, Time) %>%
+    e_area(Dwight, name = "Dwight") %>%
+    e_area(Computer, name = "Computer") %>%
+    
+    # Customize axis and legend
+    e_legend(bottom = "bottom") %>%
+    e_tooltip(trigger = "axis") %>%
+    e_x_axis(name = "Time (Hrs)") %>%
+    e_y_axis(name = "Count (Reams of paper)") %>%
+    
+    # Add title and subtitle
+    e_title("Dwight vs Computer")
+  
+  # Return the plot
+  return(p)
 }

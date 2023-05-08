@@ -46,13 +46,15 @@ server <- function(id) {
       tags$div(
         class = "content",
         tags$div(
-            tags$iframe(
+            tags$div(class = "dwight-bio",
+              tags$iframe(
                 id = "tweet",
+                class = "embed-responsive-item",
                 border = 0,
                 frameborder = 0,
-                height = "100%",
-                width = "100%",
+                allowfullscreen = TRUE,
                 src = src
+              )
             )
             )
       ),

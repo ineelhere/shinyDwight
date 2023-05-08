@@ -90,7 +90,7 @@ ui <- function(id) {
     # The call to action button
     cta = actionButton("cta_talk", "Let's Talk",
                        class = "btn-primary btn-cta mobile-toggled",
-                       onclick ="window.open('https://www.linkedin.com/in/indraneelchakraborty/', '_blank')"
+                       onclick ="window.open('https://www.linkedin.com/in/dwight-schrute-b52b4521b/', '_blank')"
     ),
 
     # The info icon
