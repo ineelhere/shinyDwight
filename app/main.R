@@ -23,8 +23,9 @@ ui <- function(id) {
            sidebar$ui(ns("sidebar"))),
     column(width = 8,
            gridPanel(
-             counts$ui(ns("docker_counts")),
-             plot$ui(ns("barchart"))
+             counts$ui(ns("salecounts")),
+             br(),
+             plot$ui(ns("plotchart"))
            )
     ),
     column(width = 3,
@@ -38,8 +39,8 @@ server <- function(id) {
   moduleServer(id, function(input, output, session) {
     header$server("app_header")
     sidebar$server("sidebar")
-    counts$server("docker_counts")
-    plot$server("barchart")
+    counts$server("salecounts")
+    plot$server("plotchart")
     twitter$server("twitter")
   })
 }
