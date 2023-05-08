@@ -3,7 +3,6 @@ box::use(
   shinyjs[...],
   bslib[...],
   bsicons[...],
-  plotly[...],
   utils[...],
 )
 
