@@ -201,18 +201,43 @@ code, kbd, pre, samp {
     }
   }
 
+  .dwight-card {
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 390px;
+    transition: box-shadow 0.5s ease-in-out, width 0.5s ease-in-out;
+  }
+  
   .dwight-bio {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 0 10%;
-
-    p, h3 {
-      transition: text-shadow 0.5s ease-in-out;
-    }
-
-    &:hover p, &:hover h3 {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
-    }
+    padding: 16px;
+  }
+  
+  .dwight-bio h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    transition: text-shadow 0.5s ease-in-out;
+  }
+  
+  .dwight-bio p {
+    margin: 8px 0 0;
+    font-size: 16px;
+    color: #666;
+    transition: text-shadow 0.5s ease-in-out;
+  }
+  
+  .dwight-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dwight-card:hover .dwight-bio h3,
+  .dwight-card:hover .dwight-bio p {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
   }

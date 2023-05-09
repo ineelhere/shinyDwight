@@ -1,23 +1,20 @@
 box::use(
   dplyr[...],
   echarts4r[...],
+  data.table[...],
 )
 
-areaplot <- function(df) {
+areaplot <- function() {
 
+  data <- fread("app/data/imdb.csv")
   # Create the area chart
-  p <- e_charts(df, Time) %>%
-    e_area(Dwight, name = "Dwight") %>%
-    e_area(Computer, name = "Computer") %>%
-
-    # Customize axis and legend
-    e_legend(bottom = "bottom") %>%
-    e_tooltip(trigger = "axis") %>%
-    e_x_axis(name = "Time (Hrs)") %>%
-    e_y_axis(name = "Count (Reams of paper)") %>%
-
-    # Add title and subtitle
-    e_title("Dwight vs Computer")
+  p <- e_charts(data, Episode) %>%
+  e_area(Rating, stack ="Title") %>%
+  e_legend(show = TRUE) %>%
+  e_tooltip(show = TRUE, trigger = "axis") %>%
+  e_title("IMDB Ratings per Episode from The Office") %>%
+  e_x_axis(name = "Episode", min=min(data$Episode), max=max(data$Episode)) %>%
+  e_y_axis(name = "Rating")
 
   # Return the plot
   return(p)

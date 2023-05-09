@@ -3,7 +3,6 @@ box::use(
   shinyjs[...],
   bslib[...],
   bsicons[...],
-  plotly[...],
   utils[...],
 )
 
@@ -46,8 +45,8 @@ ui <- function(id) {
         showcase_layout = showcase_top_right(),
         theme_color = "secondary",
       )
-    )
-
+    ),
+    br()
   )
 
 }

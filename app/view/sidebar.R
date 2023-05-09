@@ -12,7 +12,10 @@ ui <- function(id) {
       div(class = "nav", img(src = "static/phyllis.png", title = "Phyllis Vance")),
       div(class = "nav", img(src = "static/stanley.png", title = "Stanley Hudson")),
       div(class = "nav", img(src = "static/kevin.png", title = "Kevin Malone")),
-      div(class = "nav", img(src = "static/oscar.png", title = "Oscar Martinez"))
+      div(class = "nav", img(src = "static/oscar.png", title = "Oscar Martinez")),
+      div(class = "nav", img(src = "static/angela.png", title = "Angela Martin")),
+      div(class = "nav", img(src = "static/andy.png", title = "Andy"))
+
   )
 }
 
