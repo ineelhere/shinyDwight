@@ -8,6 +8,7 @@ box::use(
 box::use(
   app/logic/barplot[barplot],
   app/logic/pieplot[pieplot],
+  app/logic/areachart[areaplot],
 )
 
 #' @export
@@ -21,8 +22,14 @@ ui <- function(id) {
     column(
       width = 4,
       echarts4rOutput(ns("piechart"))
-    )
+    ),
+   
+  div(
+    br(), 
+    echarts4rOutput(ns("areaplot"))
   )
+  )
+  
 
 }
 
@@ -37,6 +44,10 @@ server <- function(id) {
 
     output$piechart <- renderEcharts4r({
       pieplot(df)
+    })
+
+    output$areaplot <- renderEcharts4r({
+      areaplot()
     })
 
   })

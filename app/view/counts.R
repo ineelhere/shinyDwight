@@ -45,8 +45,8 @@ ui <- function(id) {
         showcase_layout = showcase_top_right(),
         theme_color = "secondary",
       )
-    )
-
+    ),
+    br()
   )
 
 }

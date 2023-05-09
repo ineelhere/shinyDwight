@@ -45,8 +45,7 @@ server <- function(id) {
       tagList(
         tags$div(
           class = "content",
-          tags$div(
-            tags$div(class = "dwight-bio",
+            tags$div(
                      tags$iframe(
                        id = "tweet",
                        class = "embed-responsive-item",
@@ -56,7 +55,6 @@ server <- function(id) {
                        src = src
                      )
             )
-          )
         ),
         singleton(tags$script(HTML(
           "$(document).ready(function(){

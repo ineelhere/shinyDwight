@@ -6,7 +6,6 @@ box::use(
 box::use(
   app/view/header,
   app/view/counts,
-  app/view/twitter,
   app/view/dwightbio,
   app/view/sidebar,
   app/view/plot,
@@ -29,8 +28,7 @@ ui <- function(id) {
            )
     ),
     column(width = 3,
-           dwightbio$ui(ns("dwightbio")),
-           twitter$ui(ns("twitter")),
+           dwightbio$ui(ns("dwightbio"))
 
     )
   )
@@ -43,7 +41,6 @@ server <- function(id) {
     sidebar$server("sidebar")
     counts$server("salecounts")
     plot$server("plotchart")
-    twitter$server("twitter")
     dwightbio$server("dwightbio")
   })
 }
