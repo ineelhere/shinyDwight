@@ -7,6 +7,7 @@ box::use(
 areaplot <- function() {
 
   data <- fread("app/data/imdb.csv")
+  data$Episode <- as.integer(data$Episode)
   # Create the area chart
   p <- e_charts(data, Episode) %>%
   e_area(Rating, stack ="Title") %>%

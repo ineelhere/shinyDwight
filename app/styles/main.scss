@@ -180,11 +180,11 @@ code, kbd, pre, samp {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+  
     .nav {
       margin: 10px 0;
       transition: all 0.2s ease-in-out;
-
+  
       img {
         width: 85px;
         height: 85px;
@@ -192,14 +192,28 @@ code, kbd, pre, samp {
         border-radius: 50%;
         box-shadow: 0 0 10px rgba(163, 230, 7, 0.2);
         transition: all 0.2s ease-in-out;
-
+  
         &:hover {
           transform: scale(1.1);
           box-shadow: 0 0 20px rgba(8, 39, 105, 0.4);
         }
       }
     }
+  
+    @media only screen and (max-width: 767px) {
+      .nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+  
+        &.is-open {
+          max-height: 500px; /* adjust the value to fit your content */
+        }
+      }
+    }
   }
+  
+  
 
   .dwight-card {
     display: inline-block;
