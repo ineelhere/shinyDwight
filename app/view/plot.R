@@ -7,7 +7,7 @@ box::use(
 
 box::use(
   app/logic/barplot[barplot],
-  app/logic/pieplot[pieplot],
+  app/logic/speedplot[speedplot],
   app/logic/areachart[areaplot],
 )
 
@@ -43,7 +43,7 @@ server <- function(id) {
     })
 
     output$piechart <- renderEcharts4r({
-      pieplot(df)
+      speedplot(df)
     })
 
     output$areaplot <- renderEcharts4r({
