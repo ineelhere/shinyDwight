@@ -19,25 +19,26 @@ custom_sparkline <- function(column_name){
       alpha = 0.2
     ) %>%
     layout(
-      xaxis = list(visible = F, showgrid = F),
-      yaxis = list(visible = F, showgrid = F),
+      xaxis = list(
+        visible = FALSE,
+        showgrid = FALSE,
+        tickmode = "array",
+        tickvals = c(0, 1),
+        ticktext = c("Start", "End")
+      ),
+      yaxis = list(
+        visible = FALSE,
+        showgrid = FALSE,
+        tickmode = "array",
+        tickvals = c(min(df[[column_name]]), max(df[[column_name]])),
+        ticktext = c("Min", "Max")
+      ),
       margin = list(t = 0, r = 0, l = 0, b = 0),
       plot_bgcolor = "transparent",
       paper_bgcolor = "transparent",
       font = list(color = "black")
     ) %>%
-    config(displayModeBar = F) %>%
-    htmlwidgets::onRender(
-      "function(el) {
-        var ro = new ResizeObserver(function() {
-            var visible = el.offsetHeight > 40;
-            Plotly.relayout(el, {'xaxis.visible': visible});
-        });
-        ro.observe(el);
-        }"
-    )
+    config(displayModeBar = FALSE)
 
   return(sparkline)
 }
-
-
